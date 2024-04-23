@@ -26,13 +26,14 @@ background: #ffffff;
   font-size: 40px;
   background: #def2f1;
   color: #17252a;
+  height: 70px;
 
 
 }
 .heading h1{
   font-size: 50px;
 }
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1400px){
 
   .heading h1{
     font-size: 30px;
@@ -49,7 +50,8 @@ background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height:calc(100vh - 70px)
 }
 
 .ChartBox{
@@ -58,10 +60,11 @@ background: #ffffff;
     padding-bottom: 5%; 
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1400px){
 
   .ChartBox{
   margin-bottom: 0;
+  margin-top: 1%;
 
   }
 
@@ -92,7 +95,7 @@ background: #ffffff;
     height: 400px;
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1400px){
 
   .pie{
     height: 350px;
@@ -133,7 +136,7 @@ background: #ffffff;
     height: 80px;
   }
 
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 1400px){
 
 
     .slider .slick-dots {
@@ -154,7 +157,7 @@ background: #ffffff;
     }
 
   .analyse{
-    height: calc(100vh - 92px);
+    height: calc(100vh - 70px);
     padding-right: 50px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     background: #def2f1;
@@ -167,11 +170,11 @@ background: #ffffff;
   }
 
 
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 1400px){
 
     .analyse{
       position: relative;    
-      height: calc(100vh - 66px);
+      height: calc(100vh - 70px);
   }
 
   .data-box{
@@ -226,6 +229,6 @@ background: #ffffff;
   overflow-y: auto;
   width: 280px;
   z-index: 44;
-
+  height: 500px;
  }
 
