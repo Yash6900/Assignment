@@ -64,26 +64,29 @@ background: #ffffff;
 
   .ChartBox{
   margin-bottom: 0;
-  margin-top: 1%;
+  /* margin-top: 5%; */
+  width:40%;
+  margin-top: 4%;
+    margin-right: 20%;
+  
+
+
+
 
   }
+
+
 
   .ChartBox h3{
     margin-top: 2%;
     margin-left: 1%;
     margin-top: -50px;
+   
   }
 
-}
 
-
-
-.charts {
-    width: 30%;
-    height: 60%;
 
 }
-
 
 
 
@@ -155,6 +158,26 @@ background: #ffffff;
   
   
     }
+
+    @media screen and (max-width: 1250px){
+
+
+      .slider .slick-dots {
+        bottom: auto;
+        height: auto;
+      }
+  
+      .slider .slick-dots .dots{
+        height: 50px;
+        width: 60px;
+       
+      }
+      .slider .slick-dots li{
+        margin: 0 7%;
+      }  
+    
+    
+      }
 
   .analyse{
     height: calc(100vh - 70px);
