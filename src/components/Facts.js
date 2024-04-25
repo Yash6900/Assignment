@@ -17,9 +17,9 @@ const Facts = ({salesData}) => {
       <div className="card mb-3" key={categoryName}>
         <div className="card-header" style={{ backgroundColor: 'transparent' }}>{categoryName}</div>
         <div className="card-body">
-          <p className="card-text">Maximum: {max.value}</p>
-          <p className="card-text">Maximum Month: {max.month}</p>
-          <p className="card-text">Minimum: {min}</p>
+          <p className="card-text">Maximum: {max.value} <br />in {max.Xdata}</p>
+         
+          <p className="card-text">Minimum: {min.value} <br />in {min.Xdata}</p>
           <p className="card-text">Average: {average.toFixed(2)}</p>
         </div>
       </div>
@@ -38,26 +38,34 @@ const Facts = ({salesData}) => {
   );
 };
 
-// Function to calculate maximum sales and corresponding month
+
 const calculateMaxSales = (data) => {
-  let maxSales = { value: 0, month: '' };
+  let maxSales = { value: 0, Xdata: '' };
   data.forEach(item => {
-    if (item.data > maxSales.value) {
-      maxSales.value = item.data;
-      maxSales.month = item.month;
+    if (item.Ydata > maxSales.value) {
+      maxSales.value = item.Ydata;
+      maxSales.Xdata = item.Xdata;
     }
   });
   return maxSales;
 };
 
-// Function to calculate minimum sales
+
 const calculateMinSales = (data) => {
-  return Math.min(...data.map(item => item.data));
+  let minSales = { value: Infinity, Xdata: '' }; 
+  data.forEach(item => {
+    if (item.Ydata < minSales.value) {
+      minSales.value = item.Ydata;
+      minSales.Xdata = item.Xdata;
+    }
+  });
+  return minSales;
 };
 
-// Function to calculate average sales
+
+
 const calculateAverageSales = (data) => {
-  const totalSales = data.reduce((total, item) => total + item.data, 0);
+  const totalSales = data.reduce((total, item) => total + item.Ydata, 0);
   return totalSales / data.length;
 };
 

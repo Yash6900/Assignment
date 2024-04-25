@@ -49,7 +49,7 @@ const App = () => {
         </div>
 
         <div className='ChartBox'>
-          <h3>Rainfall Data</h3>
+          <h3>Data</h3>
       <Slider className='slider' {...settings}>
         <div className='charts' >
           {chartData && <LineChart />}

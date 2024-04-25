@@ -11,7 +11,7 @@ const LineChart = () => {
   
   const seriesData = categories.map(categoryName => ({
     name: categoryName,
-    data: salesData[0][categoryName].map(data => data.data)
+    data: salesData[0][categoryName].map(data => data.Ydata)
   }));
 
   return (
@@ -22,7 +22,7 @@ const LineChart = () => {
         options={{    
           colors: ['#58D68D', "#3aafa9","#FFB300"],
           xaxis: {
-            categories: salesData[0][category].map(data => data.month)
+            categories: salesData[0][category].map(data => data.Xdata)
           },
           tooltip:{
             followCursor:true
@@ -33,6 +33,8 @@ const LineChart = () => {
           fill:{
             colors:['#58D68D', "#2ECC71" ,"#FFB300"]
           },
+         
+          
           animations: {
             enabled: true,
             easing: 'easeinout',

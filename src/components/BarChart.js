@@ -8,7 +8,7 @@ const BarChart = () => {
 
   const seriesData = categories.map(categoryName => ({
     name: categoryName,
-    data: salesData[0][categoryName].map(data => data.data)
+    data: salesData[0][categoryName].map(data => data.Ydata)
   }));
 
   return (
@@ -19,7 +19,7 @@ const BarChart = () => {
         options={{
           colors: ['#1E8449', "#FFB300", "#1e81b0"],
           xaxis: {
-            categories: salesData[0][category].map(data => data.month)
+            categories: salesData[0][category].map(data => data.Xdata)
           },
           tooltip: {
             followCursor: true

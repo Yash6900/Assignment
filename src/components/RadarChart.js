@@ -8,7 +8,7 @@ const RadarChart = () => {
  
   const seriesData = categories.map(categoryName => ({
     name: categoryName,
-    data: salesData[0][categoryName].map(data => data.data)
+    data: salesData[0][categoryName].map(data => data.Ydata)
   }));
 
 
@@ -20,7 +20,7 @@ const RadarChart = () => {
        options={{    
          colors: ['#58D68D', "#3aafa9","#FFB300"],
          xaxis: {
-           categories: salesData[0][category].map(data => data.month)
+           categories: salesData[0][category].map(data => data.Xdata)
          },
          tooltip:{
            followCursor:true

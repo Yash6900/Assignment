@@ -15,9 +15,9 @@ const PieChart = () => {
             type="donut"
             width={370}
             height={300}
-            series={salesData[0][categoryName].map(data => data.data)}
+            series={salesData[0][categoryName].map(data => data.Ydata)} 
             options={{
-              labels: salesData[0][categoryName].map(data => data.month),
+              labels: salesData[0][categoryName].map(data => data.Xdata), 
               colors: ["#E74C3C",'#82E0AA', '#F1C40F' ,"#1990FF","#8E44AD","#FF5722",],
               title: {
                 text: `${categoryName} Data`,
@@ -38,7 +38,7 @@ const PieChart = () => {
                 enabled: true,
                 y: {
                   formatter: function(value) {
-                    return value + " units";
+                    return value;
                   }
                 }
               },
