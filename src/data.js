@@ -1,25 +1,25 @@
-// export const salesData = [
-//   {
-//     "Bikes": [
-//       {"Xdata": "Q1", "Ydata": 200},
-//       {"Xdata": "Q2", "Ydata": 180},
-//       {"Xdata": "Q3", "Ydata": 220},
-//       {"Xdata": "Q4", "Ydata": 250}
-//     ],
-//     "Cars": [
-//       {"Xdata": "Q1", "Ydata": 150},
-//       {"Xdata": "Q2", "Ydata": 160},
-//       {"Xdata": "Q3", "Ydata": 170},
-//       {"Xdata": "Q4", "Ydata": 180}
-//     ],
-//     "Trucks": [
-//       {"Xdata": "Q1", "Ydata": 120},
-//       {"Xdata": "Q2", "Ydata": 130},
-//       {"Xdata": "Q3", "Ydata": 140},
-//       {"Xdata": "Q4", "Ydata": 150}
-//     ]
-//   }
-// ];
+export const salesData = [
+  {
+    "Bikes": [
+      {"Xdata": "Q1", "Ydata": 200},
+      {"Xdata": "Q2", "Ydata": 180},
+      {"Xdata": "Q3", "Ydata": 220},
+      {"Xdata": "Q4", "Ydata": 250}
+    ],
+    "Cars": [
+      {"Xdata": "Q1", "Ydata": 150},
+      {"Xdata": "Q2", "Ydata": 160},
+      {"Xdata": "Q3", "Ydata": 170},
+      {"Xdata": "Q4", "Ydata": 180}
+    ],
+    "Trucks": [
+      {"Xdata": "Q1", "Ydata": 120},
+      {"Xdata": "Q2", "Ydata": 130},
+      {"Xdata": "Q3", "Ydata": 140},
+      {"Xdata": "Q4", "Ydata": 150}
+    ]
+  }
+];
 
 
 // // export const salesData = [
@@ -72,33 +72,33 @@
 //   }
 // ];
 
-export const salesData = [
-  {
-    "Mumbai": [
-      {"Xdata": "January", "Ydata": 10},
-      {"Xdata": "February", "Ydata": 5},
-      {"Xdata": "March", "Ydata": 15},
-      {"Xdata": "April", "Ydata": 20},
-      {"Xdata": "May", "Ydata": 25},
-      {"Xdata": "June", "Ydata": 30}
-    ],
-    "Delhi": [
-      {"Xdata": "January", "Ydata": 5},
-      {"Xdata": "February", "Ydata": 3},
-      {"Xdata": "March", "Ydata": 8},
-      {"Xdata": "April", "Ydata": 12},
-      {"Xdata": "May", "Ydata": 18},
-      {"Xdata": "June", "Ydata": 22}
-    ],
-    "Kolkata": [
-      {"Xdata": "January", "Ydata": 8},
-      {"Xdata": "February", "Ydata": 4},
-      {"Xdata": "March", "Ydata": 10},
-      {"Xdata": "April", "Ydata": 15},
-      {"Xdata": "May", "Ydata": 20},
-      {"Xdata": "June", "Ydata": 25}
-    ]
-  }
-];
+// export const salesData = [
+//   {
+//     "Mumbai": [
+//       {"Xdata": "January", "Ydata": 10},
+//       {"Xdata": "February", "Ydata": 5},
+//       {"Xdata": "March", "Ydata": 15},
+//       {"Xdata": "April", "Ydata": 20},
+//       {"Xdata": "May", "Ydata": 25},
+//       {"Xdata": "June", "Ydata": 30}
+//     ],
+//     "Delhi": [
+//       {"Xdata": "January", "Ydata": 5},
+//       {"Xdata": "February", "Ydata": 3},
+//       {"Xdata": "March", "Ydata": 8},
+//       {"Xdata": "April", "Ydata": 12},
+//       {"Xdata": "May", "Ydata": 18},
+//       {"Xdata": "June", "Ydata": 22}
+//     ],
+//     "Kolkata": [
+//       {"Xdata": "January", "Ydata": 8},
+//       {"Xdata": "February", "Ydata": 4},
+//       {"Xdata": "March", "Ydata": 10},
+//       {"Xdata": "April", "Ydata": 15},
+//       {"Xdata": "May", "Ydata": 20},
+//       {"Xdata": "June", "Ydata": 25}
+//     ]
+//   }
+// ];
 
 
