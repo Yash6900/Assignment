@@ -1,64 +1,88 @@
-import React from 'react';
-import Chart from "react-apexcharts";
-import { salesData } from '../data';
+import React, { useState } from 'react';
+import Papa from 'papaparse'; // Library for parsing CSV
+import Chart from 'react-apexcharts'; // ApexCharts wrapper for React
 
-const LineChart = () => {
+const ChartComponent = () => {
+  const [chartData, setChartData] = useState(null);
+  const [error, setError] = useState(null);
 
-  const categories = Object.keys(salesData[0]);
-  const category = Object.keys(salesData[0])[0];
-  
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
 
-  
-  const seriesData = categories.map(categoryName => ({
-    name: categoryName,
-    data: salesData[0][categoryName].map(data => data.Ydata)
-  }));
+    if (file.type !== 'text/csv') {
+      setError('Please select a valid CSV file.');
+      return;
+    }
+
+    setError(null);
+
+    try {
+      const csvData = await readFile(file);
+      const parsedData = Papa.parse(csvData, { header: true });
+      console.log('Parsed Data:', parsedData.data);
+      setChartData(parsedData.data);
+    } catch (err) {
+      setError('Error reading file.');
+    }
+  };
+
+  const readFile = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        resolve(event.target.result);
+      };
+
+      reader.onerror = (error) => {
+        reject(error);
+      };
+
+      reader.readAsText(file);
+    });
+  };
+
+  console.log('Chart Data:', chartData);
 
   return (
     <div>
-      <Chart
-        type='line'
-        series={seriesData}
-        options={{    
-          colors: ['#58D68D', "#3aafa9","#FFB300"],
-          xaxis: {
-            categories: salesData[0][category].map(data => data.Xdata)
-          },
-          tooltip:{
-            followCursor:true
-          },
-          markers: {
-            size: 5,
-          },
-          fill:{
-            colors:['#58D68D', "#2ECC71" ,"#FFB300"]
-          },
-         
-          
-          animations: {
-            enabled: true,
-            easing: 'easeinout',
-            speed: 600,
-            animateGradually: {
-                enabled: true,
-                delay: 150
+      <input type="file" accept="text/csv" onChange={handleFileUpload} />
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {chartData && chartData.length > 0 ? (
+        <Chart
+          options={{
+            chart: {
+              type: 'area', // Change chart type to line
             },
-            dynamicAnimation: {
-                enabled: true,
-                speed: 500
+            xaxis: {
+              categories: chartData.map((item) => item.category),
             },
-            dropShadow: {
-              enabled: true,
-              top: 0,
-              left: 0,
-              blur: 3,
-              opacity: 0.5
-            }
-          }
-        }}
-      />
+            stroke: {
+              curve: 'smooth', // Smooth curve for lines
+              width: 4, // Set the width of the lines
+            },
+            legend: {
+              position: 'bottom',
+            },
+          }}
+          series={[
+            {
+              name: 'May Sales',
+              data: chartData.map((item) => parseInt(item.sales)),
+            },
+            {
+              name: 'April Sales',
+              data: chartData.map((item) => parseInt(item.sales2)),
+            },
+          ]}
+          width="500"
+        />
+      ) : (
+        <p>No data available.</p>
+      )}
     </div>
   );
 };
 
-export default LineChart;
+export default ChartComponent;

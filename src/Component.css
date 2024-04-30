@@ -269,3 +269,19 @@ background: #ffffff;
   height: 500px;
  }
 
+ .chart-select {
+  appearance: none; /* Remove default styles */
+  padding: 5px;
+  font-size: 16px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.chart-option {
+  padding-left: 30px; /* Adjust spacing for the image */
+  background-size: 20px; /* Adjust size of the background image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  background-image: url("/public/Line.png");
+}
