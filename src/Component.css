@@ -285,3 +285,29 @@ background: #ffffff;
   background-repeat: no-repeat; /* Prevent image repetition */
   background-image: url("/public/Line.png");
 }
+
+
+.s-page{
+  height: 100vh;
+
+}
+
+.s-content{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+input{
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 1%;
+
+}
+
+.s-content input button{
+  background: black;
+}

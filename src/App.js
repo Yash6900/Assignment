@@ -7,6 +7,7 @@ import "./Component.css"
 import BarChart from './components/BarChart';
 import RadarChart from './components/RadarChart';
 import Area from './components/Area';
+import ChartComponent from './components/ChartComponent';
 
 
 const App = () => {
@@ -67,6 +68,7 @@ const App = () => {
           </div>
         </div>
       </div>
+      <ChartComponent/>
     </div>
   );
 };
