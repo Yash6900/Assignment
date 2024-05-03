@@ -39,9 +39,7 @@ const Charts = () => {
   return (
     <div className="Home">
       <div className='wrapper'>
-        <div>
           <Facts salesData={salesData} />
-        </div>
            <div className='chart-container'>
 
             <div className='bar-chart' >

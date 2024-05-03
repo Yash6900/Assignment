@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import ChartComponent from '../Charts/ChartComponent';
+import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
   const [csvData, setCsvData] = useState(null); 
+ 
 
   const handleDataUpload = (data) => {
     setCsvData(data);
@@ -11,7 +14,8 @@ const Landing = () => {
   };
 
   return (
-    <div>
+    <div>   
+       <Header/>
       <div className='landing'>
         <div className='landing-image'>
           <img src="LandingImage.svg" alt="Analyse" />
@@ -29,9 +33,9 @@ const Landing = () => {
 
 const UploadForm = ({ onUpload }) => {
     const [fileName, setFileName] = useState(""); // State to hold selected file name
-  
+    const navigate =useNavigate();
     const handleFileUpload = async (e) => {
-      const file = e.target.files[0];
+      const file =  await e.target.files[0];
       if (!file) return;
   
       if (file.type !== 'text/csv') {
@@ -42,6 +46,7 @@ const UploadForm = ({ onUpload }) => {
       try {
         setFileName(file.name); // Update the state with selected file name
         const csvData = await readFile(file);
+        navigate("/chart")
         onUpload(csvData);
       } catch (err) {
         console.error('Error reading file:', err);
@@ -63,6 +68,7 @@ const UploadForm = ({ onUpload }) => {
     };
   
     return (
+  
       <div className="upload-form">
         <label className="custom-file-upload">
           <input type="file" accept="csv" onChange={handleFileUpload} />
@@ -70,6 +76,7 @@ const UploadForm = ({ onUpload }) => {
         </label>
         {fileName && <div>Selected file: {fileName}</div>}
       </div>
+      
     );
   };
   

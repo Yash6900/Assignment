@@ -6,4 +6,9 @@
 html{
   font-family: "Roboto", sans-serif;
   font-family: "Libre Franklin", sans-serif;
+  scroll-behavior: smooth;
+}
+
+section{
+  height: 100vh;
 }
