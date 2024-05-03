@@ -17,7 +17,7 @@ const BarChart = () => {
         type='bar'
         series={seriesData}
         options={{
-          colors: ['#1E8449', "#FFB300", "#1e81b0"],
+          colors:  ["#e60049", "#50e991",  "#9b19f5", "#ffa300", "#dc0ab4", "#b3d4ff", "#00bfa0"],
           xaxis: {
             categories: salesData[0][category].map(data => data.Xdata)
           },
@@ -28,7 +28,8 @@ const BarChart = () => {
             size: 1,
           },
           fill: {
-            colors: ['#1E8449', "#FFB300", "#1e81b0"],
+            colors: ["#e60049", "#50e991",  "#9b19f5", "#ffa300", "#dc0ab4", "#b3d4ff", "#00bfa0"]
+            ,
           },
           animations: {
             enabled: true,

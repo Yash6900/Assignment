@@ -65,10 +65,9 @@ const UploadForm = ({ onUpload }) => {
     return (
       <div className="upload-form">
         <label className="custom-file-upload">
-          <input type="file" accept="text/csv" onChange={handleFileUpload} />
+          <input type="file" accept="csv" onChange={handleFileUpload} />
           Upload CSV File
         </label>
-        {/* Display the selected file name */}
         {fileName && <div>Selected file: {fileName}</div>}
       </div>
     );

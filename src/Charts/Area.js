@@ -17,7 +17,7 @@ const Area = () => {
        type='area'
        series={seriesData}
        options={{    
-         colors: ['#58D68D', "#3aafa9","#FFB300"],
+         colors: ["#ea5545","#00b7c7",  "#5ad45a", "#27aeef", "#b33dc6"],
          xaxis: {
            categories: salesData[0][category].map(data => data.Xdata)
          },
@@ -28,7 +28,7 @@ const Area = () => {
            size: 5,
          },
          fill:{
-           colors:['#58D68D', "#2ECC71" ,"#FFB300"]
+           colors:["#ea5545","#00b7c7", "#5ad45a",  "#27aeef", "#b33dc6"]
          },
         
           animations: {
