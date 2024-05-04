@@ -56,7 +56,7 @@ const UploadForm = () => {
           <input type="file" accept="csv" />
           Upload CSV File
         </label>
-        <p className="note">This feature is in testing mode and is current not working <a href="/chart">Click here</a> to check out the sample data.</p>
+        <p className="note">This feature is in testing mode and is current not working <a to="/chart">Click here</a> to check out the sample data.</p>
       </div>
       
     );
