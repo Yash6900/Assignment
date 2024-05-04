@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import ChartComponent from '../Charts/ChartComponent';
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
   const [csvData, setCsvData] = useState(null); 
+
  
 
   const handleDataUpload = (data) => {
@@ -12,6 +13,8 @@ const Landing = () => {
    
     document.getElementById('chart-section').scrollIntoView({ behavior: 'smooth' });
   };
+
+  
 
   return (
     <div>   
@@ -27,6 +30,7 @@ const Landing = () => {
         </div>
       </div>
       {csvData && <ChartComponent data={csvData} />}
+      
     </div>
   );
 }
@@ -36,6 +40,7 @@ const UploadForm = ({ onUpload }) => {
     const navigate =useNavigate();
     const handleFileUpload = async (e) => {
       const file =  await e.target.files[0];
+      navigate("/chart")
       if (!file) return;
   
       if (file.type !== 'text/csv') {
@@ -46,7 +51,7 @@ const UploadForm = ({ onUpload }) => {
       try {
         setFileName(file.name); // Update the state with selected file name
         const csvData = await readFile(file);
-        navigate("/chart")
+        
         onUpload(csvData);
       } catch (err) {
         console.error('Error reading file:', err);
