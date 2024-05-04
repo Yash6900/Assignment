@@ -1,9 +1,16 @@
-import React, {  useState } from 'react';
+import React, {  useRef, useState } from 'react';
 import ChartComponent from '../Charts/ChartComponent';
 import Header from './Header';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Landing = () => {
+  const dismissButtonRef = useRef(null);
+
+  const handleLinkClick = () => {
+    if (dismissButtonRef.current) {
+      dismissButtonRef.current.click();
+    }
+  };
   
   return (
     <div>   
@@ -25,10 +32,11 @@ const Landing = () => {
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Data Upload</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ref={dismissButtonRef}></button>
       </div>
       <div class="modal-body">
         <UploadForm/>
+        <p className="note">This feature is in testing mode and is current not working <Link to="/chart" onClick={handleLinkClick}>Click here</Link> to check out the sample data.</p>
       </div>
       
     </div>
@@ -47,6 +55,9 @@ const Landing = () => {
 }
 
 const UploadForm = () => {
+
+
+
    
 
     return (
@@ -56,10 +67,10 @@ const UploadForm = () => {
           <input type="file" accept="csv" />
           Upload CSV File
         </label>
-        <p className="note">This feature is in testing mode and is current not working <a to="/chart">Click here</a> to check out the sample data.</p>
+        
       </div>
       
-    );
+    )
   };
   
   
