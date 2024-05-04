@@ -192,7 +192,7 @@ input{
 
   padding: 10px;
   font-size: 14px;
-  width: 160px;
+  width: 200px;
   height: 220px;  
   border: none;
   box-shadow: none;
@@ -223,7 +223,7 @@ input{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2%;
+ paddin-rightS: 25%;
   margin-top: 5%;
 }
 
@@ -346,6 +346,7 @@ input{
 .data-box{
   display: flex;
   flex-direction: column;
+  
 }
 .fact-container{
   width: 300px;
