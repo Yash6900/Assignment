@@ -76,9 +76,12 @@ const Charts = () => {
             </div> 
             <div className="loading-text-container">
       <span className="typing-animation">{revealedText}</span>
-    </div>
+      <div style={{display:"flex" , flexDirection:"row"}}>
+      <input placeholder='Ask Here'  className="input-q" type="text" style={{border:"2px solid" , marginTop:"5%", color:"black" , }} />
+      <button  className="btn-1" style={{height:"48px" , width:"120px" , marginLeft:"1%" , marginTop:"5%" , borderRadius:"3%", fontSize:"20px"}}> Ask</button>
       </div>
-   
+    </div>
+   </div>
     </div>
   );
 };
