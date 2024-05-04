@@ -18,7 +18,7 @@ const Charts = () => {
   const [revealedText, setRevealedText] = useState('');
 
   useEffect(() => {
-    const fullParagraph = "Your data represents quarterly sales figures for three types of vehicles: Bikes, Cars, and Trucks. Each vehicle category has sales data recorded for four quarters. By analyzing this data, we can identify trends in sales performance over time for each vehicle type."; 
+    const fullParagraph = "Your data represents quarterly sales figures for three types of vehicles: Bikes, Cars, and Trucks. Each vehicle category has sales data recorded for four quarters. By analyzing this data, we can identify trends in sales performance over time for each vehicle type.If you have any further questions about this data or would like more insights, I am here to answer."; 
     setParagraph(fullParagraph);
   }, []);
 
