@@ -85,7 +85,7 @@ const Charts = () => {
             <div className="loading-text-container">
       <span className="typing-animation">{revealedText}</span>
       <div style={{display:"flex" , flexDirection:"row"}}>
-      <input placeholder='Ask Here'  className="input-q" type="text" style={{border:"2px solid" , marginTop:"5%", color:"black" , width:"100%"}} />
+      <input placeholder='For more insights and your questions.... '  className="input-q" type="text" style={{border:"2px solid" , marginTop:"5%", color:"black" , width:"100%"}} />
       <button  className="btn-1" style={{height:"52px" , width:"120px" , marginLeft:"1%" , marginTop:"5%" , borderRadius:"3%", fontSize:"20px"}} onClick={handleSubmit} > Ask</button>
     
       </div>
