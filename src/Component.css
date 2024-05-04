@@ -311,3 +311,33 @@ flex-direction: row;
   color: white;
 }
 
+
+.btn-m{
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid #6C63FF;
+  background-color: #6C63FF;
+  color: #fff;
+  padding: 10px 20px;
+
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+
+
+}
+
+.btn-m:hover{
+  background-color:#514bbe ;
+}
+
+.note {
+  margin-top: 10px;
+  color: red;
+}
+
+.note a {
+  color: red;
+  text-decoration: underline;
+}

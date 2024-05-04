@@ -4,18 +4,7 @@ import Header from './Header';
 import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
-  const [csvData, setCsvData] = useState(null); 
-
- 
-
-  const handleDataUpload = (data) => {
-    setCsvData(data);
-   
-    document.getElementById('chart-section').scrollIntoView({ behavior: 'smooth' });
-  };
-
   
-
   return (
     <div>   
        <Header/>
@@ -26,60 +15,48 @@ const Landing = () => {
         <div className="landing-container">
           <h2>Unlock Insights, Leverage Data with Powerful Analytics.</h2>
           <p>Empower your business with actionable insights. Our powerful analytics platform transforms raw data into valuable information, enabling informed strategies and smarter decisions.</p>
-          <UploadForm onUpload={handleDataUpload} />
+          <div className="upload-form">
+       
+          <button type="button" class="btn-m" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Get Started
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Data Upload</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <UploadForm/>
+      </div>
+      
+    </div>
+  </div>
+</div>
+       
+      </div>
+
+ 
         </div>
       </div>
-      {csvData && <ChartComponent data={csvData} />}
+
       
     </div>
   );
 }
 
-const UploadForm = ({ onUpload }) => {
-    const [fileName, setFileName] = useState(""); // State to hold selected file name
-    const navigate =useNavigate();
-    const handleFileUpload = async (e) => {
-      const file =  await e.target.files[0];
-      navigate("/chart")
-      if (!file) return;
-  
-      if (file.type !== 'text/csv') {
-        alert('Please select a valid CSV file.');
-        return;
-      }
-  
-      try {
-        setFileName(file.name); // Update the state with selected file name
-        const csvData = await readFile(file);
-        
-        onUpload(csvData);
-      } catch (err) {
-        console.error('Error reading file:', err);
-        alert('Error reading file.');
-      }
-    };
-  
-    const readFile = (file) => {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          resolve(event.target.result);
-        };
-        reader.onerror = (error) => {
-          reject(error);
-        };
-        reader.readAsText(file);
-      });
-    };
-  
+const UploadForm = () => {
+   
+
     return (
   
       <div className="upload-form">
         <label className="custom-file-upload">
-          <input type="file" accept="csv" onChange={handleFileUpload} />
+          <input type="file" accept="csv" />
           Upload CSV File
         </label>
-        {fileName && <div>Selected file: {fileName}</div>}
+        <p className="note">This feature is in testing mode and is current not working <a href="/chart">Click here</a> to check out the sample data.</p>
       </div>
       
     );

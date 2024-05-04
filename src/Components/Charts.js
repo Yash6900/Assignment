@@ -16,6 +16,12 @@ const Charts = () => {
   const [chartData, setChartData] = useState(salesData);
   const [paragraph, setParagraph] = useState('');
   const [revealedText, setRevealedText] = useState('');
+  const [showNote, setShowNote] = useState(false);
+
+  const handleSubmit = () => {
+    
+    setShowNote(true); 
+  };
 
   useEffect(() => {
     const fullParagraph = "Your data represents quarterly sales figures for three types of vehicles: Bikes, Cars, and Trucks. Each vehicle category has sales data recorded for four quarters. By analyzing this data, we can identify trends in sales performance over time for each vehicle type.If you have any further questions about this data or would like more insights, I am here to answer."; 
@@ -53,6 +59,8 @@ const Charts = () => {
     }
   };
 
+ 
+
   return (
     <div className="Home">
       <div className='wrapper'>
@@ -77,9 +85,13 @@ const Charts = () => {
             <div className="loading-text-container">
       <span className="typing-animation">{revealedText}</span>
       <div style={{display:"flex" , flexDirection:"row"}}>
-      <input placeholder='Ask Here'  className="input-q" type="text" style={{border:"2px solid" , marginTop:"5%", color:"black" , }} />
-      <button  className="btn-1" style={{height:"48px" , width:"120px" , marginLeft:"1%" , marginTop:"5%" , borderRadius:"3%", fontSize:"20px"}}> Ask</button>
+      <input placeholder='Ask Here'  className="input-q" type="text" style={{border:"2px solid" , marginTop:"5%", color:"black" , width:"100%"}} />
+      <button  className="btn-1" style={{height:"52px" , width:"120px" , marginLeft:"1%" , marginTop:"5%" , borderRadius:"3%", fontSize:"20px"}} onClick={handleSubmit} > Ask</button>
+    
       </div>
+      {showNote && (
+        <p style={{ color: "red", marginTop: "10px" }}>This feature is currently in beta testing.</p>
+      )}
     </div>
    </div>
     </div>
