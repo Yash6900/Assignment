@@ -6,7 +6,7 @@ const Header = () => {
       <div>
       <nav class="navbar navbar-expand-lg " style={{backgroundColor:"transparent" }}>
   <div class="container-fluid" >
-    <a class="navbar-brand" href="" style={{fontSize:"30px"}}>Navbar</a>
+    <a class="navbar-brand" href="" style={{fontSize:"30px"}}>Visualize</a>
     </div>
     </nav>
   </div>

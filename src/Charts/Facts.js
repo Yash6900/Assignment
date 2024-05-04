@@ -20,18 +20,18 @@ const Facts = ({salesData}) => {
 
     return (
 
-      <div className=' col-md-4' key={categoryName}>
-      <div className="card" >
-        <div className="card-header">{categoryName}</div>
-        <div className="card-body">
-          <p className="card-text">Maximum: {max.value} <br />in {max.Xdata}</p>
-          <p className="card-text">Minimum: {min.value} <br />in {min.Xdata}</p>
-          <p className="card-text">Total Sales: {tot} <br /></p>
+      <div className=' card-container col-md-4' key={categoryName}>
+        <div className="card">
+          <div className="card-header">{categoryName}</div>
+          <div className="card-body">
+            <p className="card-text">Maximum: {max.value} <br />in {max.Xdata}</p>
+            <p className="card-text">Minimum: {min.value} <br />in {min.Xdata}</p>
+            <p className="card-text">Total Sales: {tot} <br /></p>
+          </div>
         </div>
       </div>
-     
+    
 
-      </div>
     );
   });
 

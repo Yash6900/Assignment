@@ -63,8 +63,11 @@ const Charts = () => {
 
   return (
     <div className="Home">
+      <div className='fact-container'>
+      <Facts salesData={salesData} />
+      </div>
       <div className='wrapper'>
-          <Facts salesData={salesData} />
+          
            <div className='chart-container'>
 
             <div className='bar-chart' >
@@ -94,6 +97,7 @@ const Charts = () => {
       )}
     </div>
    </div>
+
     </div>
   );
 };

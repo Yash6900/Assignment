@@ -36,7 +36,7 @@ const Landing = () => {
       </div>
       <div class="modal-body">
         <UploadForm/>
-        <p className="note">This feature is in testing mode and is currently not working <Link to="/chart" onClick={handleLinkClick}>Click here</Link> to check out the sample data.</p>
+        <p className="note"> Note:- This feature is in testing mode and is currently not working <Link to="/chart" onClick={handleLinkClick}>Click here</Link> to check out the sample data.</p>
       </div>
       
     </div>
